@@ -1,0 +1,8 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: hello
+          uri: https://simple
+          predicates:
+            - Path=/hello/**
