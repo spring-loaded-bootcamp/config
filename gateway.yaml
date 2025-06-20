@@ -1,8 +1,10 @@
 spring:
   cloud:
     gateway:
-      routes:
-        - id: hello
-          uri: https://simple
-          predicates:
-            - Path=/hello/**
+      server:
+        webflux:
+          routes:
+            - id: hello
+              uri: http://simple:8080
+              predicates:
+                - Path=/hello/**
