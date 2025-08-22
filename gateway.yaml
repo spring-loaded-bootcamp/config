@@ -8,3 +8,19 @@ spring:
               uri: http://simple:8080
               predicates:
                 - Path=/hello/**
+
+---
+
+spring:
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: hello
+              uri: http://complex:8080
+              predicates:
+                - Path=/hello/**
+  profiles:
+    active: test
+
